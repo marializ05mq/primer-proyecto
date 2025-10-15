@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #1a2a6c, #2c3e50);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+header {
+    text-align: center;
+    padding: 30px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    background: linear-gradient(to right, #ff8c00, #ffd700, #ff8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    background-size: 300% 300%;
+    animation: gradientShift 4s ease infinite;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.landscape-container {
+    position: relative;
+    height: 600px;
+    margin: 30px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, #0c1445, #1a237e);
+}
+
+/* Sky elements */
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, #4a148c, #7b1fa2, #9c27b0);
+    z-index: 1;
+}
+
+.sun {
+    position: absolute;
+    top: 40px;
+    right: 100px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ffd700, #ff8c00);
+    border-radius: 50%;
+    box-shadow: 0 0 60px #ff8c00, 0 0 100px #ff8c00;
+    animation: sunPulse 8s infinite alternate;
+    z-index: 2;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.cloud-1 {
+    top: 80px;
+    left: 10%;
+    width: 120px;
+    height: 60px;
+    animation: floatCloud 15s infinite linear;
+}
+
+.cloud-2 {
+    top: 120px;
+    left: 40%;
+    width: 150px;
+    height: 70px;
+    animation: floatCloud 20s infinite linear reverse;
+}
+
+.cloud-3 {
+    top: 60px;
+    left: 70%;
+    width: 100px;
+    height: 50px;
+    animation: floatCloud 18s infinite linear;
+}
+
+/* Mountains */
+.mountains {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    z-index: 4;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: solid transparent;
+    border-right: solid transparent;
+    border-bottom: solid;
+}
+
+.illimani {
+    left: 30%;
+    border-left-width: 200px;
+    border-right-width: 200px;
+    border-bottom-width: 300px;
+    border-bottom-color: #5d4037;
+    transform: translateX(-50%);
+    animation: mountainGlow 6s infinite alternate;
+}
+
+.mountain-2 {
+    left: 10%;
+    border-left-width: 120px;
+    border-right-width: 120px;
+    border-bottom-width: 220px;
+    border-bottom-color: #4e342e;
+}
+
+.mountain-3 {
+    right: 15%;
+    border-left-width: 150px;
+    border-right-width: 150px;
+    border-bottom-width: 250px;
+    border-bottom-color: #3e2723;
+}
+
+/* Valle de la Luna formations */
+.valley {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 35%;
+    background: linear-gradient(to top, #8d6e63, #a1887f);
+    z-index: 5;
+}
+
+.formation {
+    position: absolute;
+    bottom: 0;
+    background: #795548;
+    border-radius: 10px 10px 0 0;
+}
+
+.formation-1 {
+    left: 10%;
+    width: 80px;
+    height: 180px;
+    animation: formationPulse 5s infinite alternate;
+}
+
+.formation-2 {
+    left: 25%;
+    width: 60px;
+    height: 150px;
+    animation: formationPulse 6s infinite alternate;
+}
+
+.formation-3 {
+    left: 40%;
+    width: 100px;
+    height: 200px;
+    animation: formationPulse 7s infinite alternate;
+}
+
+.formation-4 {
+    left: 60%;
+    width: 70px;
+    height: 170px;
+    animation: formationPulse 5.5s infinite alternate;
+}
+
+.formation-5 {
+    right: 15%;
+    width: 90px;
+    height: 190px;
+    animation: formationPulse 6.5s infinite alternate;
+}
+
+/* Foreground details */
+.foreground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to top, #5d4037, #795548);
+    z-index: 6;
+}
+
+.rock {
+    position: absolute;
+    bottom: 20px;
+    width: 30px;
+    height: 40px;
+    background: #4e342e;
+    border-radius: 50% 50% 0 0;
+}
+
+.rock-1 { left: 15%; }
+.rock-2 { left: 35%; }
+.rock-3 { left: 55%; }
+.rock-4 { left: 75%; }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes sunPulse {
+    0% { transform: scale(1); box-shadow: 0 0 60px #ff8c00, 0 0 100px #ff8c00; }
+    100% { transform: scale(1.1); box-shadow: 0 0 80px #ff8c00, 0 0 120px #ff8c00; }
+}
+
+@keyframes floatCloud {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+@keyframes mountainGlow {
+    0% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+    100% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+}
+
+@keyframes formationPulse {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Hover effects */
+.formation:hover {
+    transform: translateY(-15px) scale(1.05);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 7;
+}
+
+.mountain:hover {
+    transform: scale(1.02);
+    transition: all 0.4s ease;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+/* Information panel */
+.info-panel {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    animation: slideUp 1.5s ease-out;
+}
+
+.info-panel h2 {
+    color: #ffd700;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.info-panel p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.info-panel ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.info-panel li {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    animation: fadeIn 2s ease-in-out 0.5s both;
+}
+
+.github-link {
+    display: inline-block;
+    background: linear-gradient(to right, #ff8c00, #ffd700);
+    color: #1a237e;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.github-link:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .subtitle { font-size: 1.2rem; }
+    .landscape-container { height: 500px; }
+    .illimani { border-bottom-width: 250px; }
+    .formation-3 { height: 160px; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    .landscape-container { height: 400px; }
+    .illimani { border-bottom-width: 200px; }
+    .formation { height: 120px; }
+}
